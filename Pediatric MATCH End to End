@@ -2,8 +2,8 @@ COG Institution Patient Registration and Enrollment on APEC1621 (master protocol
   messgae to MATCHBOX COG registration number
   BPC receives email notification of enrollment to Peds MATCH
   Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
-
-
+  Specimens are shipped from institution(s) 
+(check if email notification to sequencing labs/MDA)
 BPC Day 1
 1)	BPC receives blood and tumor block (FFPE).
 a.	Blood in EDTA
@@ -16,7 +16,7 @@ b.	Tumor block to CM
 i.	BPC will look at tissue and create request to cut 30 slides (larger tissues) or 50 slides (smaller tissue).  CM will make final judgment and will contact BPC is the request needs to be updated.
 4)	BPC process blood in streck for plasma > bank
 5)	MGL extracts DNA from blood specimens.
-a.	QC specimens (run get/run pico), create aliquots > bank (completed in STARS?)
+a.	QC specimens (run get/run pico), create aliquots > bank (completed in STARS?) cause for failure? 
 6)	Core Morph Lab cuts slide from tumor block (FFPE)
   	          Cuts = 1 HE, 4 unstained (from IHC), 30-50 unstained slides, 1 H&E
               Slides for IHC do not need to be vacuum sealed or wax dipped
@@ -39,7 +39,7 @@ a.	BPC will receive CM request and create a MGL request in STARS.
 
 Day 2
 15)	BPC coordinator receives paperwork from the previous day and QC specimens in STARS.
-a.	Received message triggered to match box.  
+          	Received message triggered to MATCHBOX, PatientID, Surgical ID, Specimen Type..... you are here 
 b.	Surgical event ID assigned to tumor specimen.
 16)	VM scans slides.
 a.	Slides will first be scanned with the annotation, and then the annotations will be removed and rescanned. 
