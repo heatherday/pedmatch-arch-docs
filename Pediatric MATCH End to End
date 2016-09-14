@@ -1,18 +1,17 @@
+Everything goes perfect...
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
-  messgae to MATCHBOX COG registration number
-  BPC receives email notification of enrollment to Peds MATCH
+COG  messgae to MATCHBOX COG registration number: patient enrolled
+COG issues email notification of enrollment to BPC
+COG issues messaging Peds MATCH
   Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
-  Specimens are shipped from institution(s) 
+  Specimens are shipped from institution(s) to BPC (all adequate)
 (check if email notification to sequencing labs/MDA)
-BPC Day 1
-1)	BPC receives blood and tumor block (FFPE).
-a.	Blood in EDTA
-b.	Blood in Streck
-c.	Paraffin Block Primary/Metastatic or Unstained Primary/Metastatic Slides
+BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
 2)	BPC accessioned specimens in STARS. 
          (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
           path report should be recieved at this time (scanned?)
 3)	BPC send specimens to CM and MGL for processing. (in STARS - checkpoint - specimen ownership)
+AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID
 a.	Blood in EDTA to MGL
 b.	Tumor block to CM 
 i.	BPC will look at tissue and create request to cut 30 slides (larger tissues) or 50 slides (smaller tissue).  CM will make final judgment and will contact BPC is the request needs to be updated.
