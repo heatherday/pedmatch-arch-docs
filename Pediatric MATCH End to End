@@ -7,14 +7,15 @@ COG issues messaging Peds MATCH
   Specimens are shipped from institution(s) to BPC (all adequate)
 (check if email notification to sequencing labs/MDA)
 BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
-2)	BPC accessioned specimens in STARS. 
+BPC accessioned specimens in STARS. 
          (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
           path report should be recieved at this time (scanned?)
-3)	BPC send specimens to CM and MGL for processing. (in STARS - checkpoint - specimen ownership)
-AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID
+BPC send specimens to CM and MGL for processing. (in STARS - checkpoint - specimen ownership)
+AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID???
 a.	Blood in EDTA to MGL
 b.	Tumor block to CM 
-i.	BPC will look at tissue and create request to cut 30 slides (larger tissues) or 50 slides (smaller tissue).  CM will make final judgment and will contact BPC is the request needs to be updated.
+BPC will look at tissue and create request to cut 30 slides (larger tissues) or 50 slides (smaller tissue). 
+CM will make final judgment and will contact BPC is the request needs to be updated.
 4)	BPC process blood in streck for plasma > bank
 5)	MGL extracts DNA from blood specimens.
 a.	QC specimens (run get/run pico), create aliquots > bank (completed in STARS?) NOTE: Blood Specimens cannot 'fail'.
