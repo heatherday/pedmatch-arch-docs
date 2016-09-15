@@ -11,65 +11,59 @@ BPC accessioned specimens in STARS
          (enh. add notes to STARS for Peds MATCH Protocol for workflow (processing, path review etc, what to send)?
          (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
           path report should be recieved at this time (scanned?)
-BPC will look at tissue and create CM Request (see reqeust specificiation)
-BPC send specimens to CM and MGL for processing. (in STARS - checkpoint - specimen ownership)
+BPC will look at tissue and create CM Request (see reqeust specificiation) is this first possible failure indication?
+BPC send specimens to CM and MGL for processing.
 AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID???
 BPC Sends Blood to MGL
 BPC Sends Tumor Block to CM
 MGL Receives Blood in EDTA
 CM receives Tunmor Block
-CM will make final judgment (?) and will contact BPC is the request needs to be updated.
-4)	BPC process blood in streck for plasma > bank
-5)	MGL extracts DNA from blood specimens.
-a.	QC specimens (run get/run pico), create aliquots > bank (completed in STARS?) NOTE: Blood Specimens cannot 'fail'.
-6)	Core Morph Lab cuts slide from tumor block (FFPE)
+CM will make final judgment (?) and will contact BPC if the request needs to be updated.
+BPC process blood in streck for plasma > bank
+MGL extracts DNA from blood specimens.
+MGL QC specimens (run get/run pico), create aliquots > bank (completed in STARS?) NOTE: Blood Specimens cannot 'fail'.
+CM cuts slide from tumor block (FFPE)
   	          Cuts = 1 HE, 4 unstained (from IHC), 30-50 unstained slides, 1 H&E
               Slides for IHC do not need to be vacuum sealed or wax dipped
-7)	BPC picks up tumor block, stained slides and slides 4 unstained slides (for IHC)
-a.	All specimens will be shipped back to BPC in STARS.  BPC will need to make a new request that have the unstained slides.
-8)	BPC takes slides to Pathologist for review and slide annotation. (time allotement if there is a failure?)
-a.	Call/page Dr. Arnold when receive a specimen for review
-b.	Review sheet will need to be created at some time. ?????? if we scan anyway why can't we put data into VIPER2
-            we offered to create case in VIPER2 to allow their pathologist to view images (no data input from MDA)
-             required when slides are shipped
-c.	  If low percent tumor, sent email out to group > do not move on (does anyone want to know about this major delay!!)
-              can we audit this from VIPER2 or STARS to know why specimen failed?)
-d.  	If not concordant, send email out to group > do not move on (same audit as above) 
-9)	BPC takes HE annotated slides back to CM for macro dissection.
-a.	BPC will send a CM request in STARS that has the stained slides and unstained slides.
-10)	BPC enters path review forms into STARS (or initiates pull from VIPER)
-11)	Core Morph scrapes the tumor section of the slides into a vial.  
-a.	Completed CM request in STARS.
-12)	BPC picks up stained slides and vial of scrapings.
-a.	BPC will receive CM request and create a MGL request in STARS.
-13)	BPC sends vial of scrapings to MGL.
-14)	BPC sends annotated stained slides to VM for imaging, create case in VIPER
+BPC picks up tumor block, stained slides and slides 4 unstained slides (for IHC)
+All specimens will be shipped back to BPC in STARS.  BPC will need to make a new request that have the unstained slides.
+BPC takes slides to Pathologist for review and slide annotation
+PATH marks slide for macro
+PATH enters path results and concordance (need to get to STARS)
+c.	  If low percent tumor, sent email out to group > do not move on
+d.  	If not concordant, send email out to group > do not move on
+BPC takes HE annotated slides back to CM for macro dissection
+BPC will send a CM request in STARS that has the stained slides and unstained slides.
+BPC enters path review forms into STARS (or initiates pull from VIPER)
+CM scrapes the tumor section of the slides into a vial  
+a.	Completed CM request in STARS
+BPC picks up stained slides and vial of scrapings.
+BPC will receive CM request and create a MGL request in STARS
+BPC sends vial of scrapings to MGL.
+BPC sends annotated stained slides to VM for imaging, create case in VIPER
 
 Day 2
-15)	BPC coordinator receives paperwork from the previous day and QC specimens in STARS.
+BPC coordinator receives paperwork from the previous day and QC specimens in STARS
           	Received message triggered to MATCHBOX, PatientID, Surgical ID, Specimen Type..... you are here 
 b.	Surgical event ID assigned to tumor specimen, check QC flag in STARS to trigger:
         Message, patient ID, surgical ID, specimens of <type list>, APEC1621, timepoint, collection...
           create record in PedsMatchIQ 
           send message to matchbox
           (audit/report in BIE to show history of pedsmatch communication standards)
-16)	VM scans slides.
-a.	Slides will first be scanned with the annotation, and then the annotations will be removed and rescanned. 
-17)	BPC sends slides for IHC to MD Anderson. 
+VM scans slides
+a.	Slides will first be scanned with the annotation, and then the annotations will be removed and rescanned
+VM creates a case in VIPER so MDA path can look at them
+MDA Pathology receives VIPER case review invitation
+BPC sends slides for IHC to MD Anderson
+a.shipped message is triggered to MATCHBOX
 MDA receives slides for IHC
 MDA accessions slides for IHC and runs tests
-a.	A shipped message will be triggered to Match Box. 
-b.	These should not be shipped until
-MDA receives slides for IHC
-MDA accessions slides for IHC and runs tests
-MDA Pathology receives VIPER case creation?
+MDA Pathology receives VIPER case creation
 MDA sends results to MATCHBOX for IHC
-18)	VM sends creates case in VIPER for MD Anderson Pathology, all paperwork that must accompany slides <need checklist>
-a.	Sends (seperate description) tumor stained slides to BPC.
-19)	MGL extracts DNA and RNA from paraffin scrapings. 
+MGL extracts DNA and RNA from paraffin scrapings
 
 Day 3
-20)	MGL will create cDNA and run QC on all nucleic acid specimens (how do we check QC complete?) NEED TO CREATE Molecular ID here...
+MGL will create cDNA and run QC on all nucleic acid specimens (how do we check QC complete?) NEED TO CREATE Molecular ID here...
   determine the specimen characreistics we can pull from STARS to create molecular IDs in PEDSMATCHIQ, 
 a.	Run gel, run pico (required results?)
 b.	Make DNA dilutions and aliquots
