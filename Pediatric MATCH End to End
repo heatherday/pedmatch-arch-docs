@@ -88,6 +88,80 @@ a.	Due to timing this will probably occur after specimens have been shipped.  ok
       is this input as a TEST, may need alternate trigger for the edge case.
 26)	BPC banks slides
 
+Visual QC Specimen  Failure
+COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
+COG  messgae to MATCHBOX COG registration number: patient enrolled
+COG issues email notification of enrollment to BPC
+COG issues messaging Peds MATCH
+  Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
+  Specimens are shipped from institution(s) to BPC (all adequate)
+(check if email notification to sequencing labs/MDA)
+BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS
+         (enh. add notes to STARS for Peds MATCH Protocol for workflow (processing, path review etc, what to send)?
+         (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
+          path report should be recieved at this time (scanned?)
+BPC will look at tissue and create CM Request (see reqeust specificiation) is this first possible failure indication?
+
+CM Review Specimen Failure (Tumor)
+Everything goes perfect...
+COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
+COG  messgae to MATCHBOX COG registration number: patient enrolled
+COG issues email notification of enrollment to BPC
+COG issues messaging Peds MATCH
+  Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
+  Specimens are shipped from institution(s) to BPC (all adequate)
+(check if email notification to sequencing labs/MDA)
+BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS
+         (enh. add notes to STARS for Peds MATCH Protocol for workflow (processing, path review etc, what to send)?
+         (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
+          path report should be recieved at this time (scanned?)
+BPC will look at tissue and create CM Request (see reqeust specificiation) is this first possible failure indication?
+BPC send specimens to CM and MGL for processing.
+AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID???
+BPC Sends Blood to MGL
+BPC Sends Tumor Block to CM
+MGL Receives Blood in EDTA
+CM receives Tunmor Block
+CM will make final judgment (?) and will contact BPC if the request needs to be updated.
+
+Patholoy Review Failure 
+COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
+COG  messgae to MATCHBOX COG registration number: patient enrolled
+COG issues email notification of enrollment to BPC
+COG issues messaging Peds MATCH
+  Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
+  Specimens are shipped from institution(s) to BPC (all adequate)
+(check if email notification to sequencing labs/MDA)
+BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS
+         (enh. add notes to STARS for Peds MATCH Protocol for workflow (processing, path review etc, what to send)?
+         (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
+          path report should be recieved at this time (scanned?)
+BPC will look at tissue and create CM Request (see reqeust specificiation) is this first possible failure indication?
+BPC send specimens to CM and MGL for processing.
+AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID???
+BPC Sends Blood to MGL
+BPC Sends Tumor Block to CM
+MGL Receives Blood in EDTA
+CM receives Tunmor Block
+CM will make final judgment (?) and will contact BPC if the request needs to be updated.
+BPC process blood in streck for plasma > bank
+MGL extracts DNA from blood specimens
+MGL QC specimens (run get/run pico), create aliquots > bank (completed in STARS?) NOTE: Blood Specimens cannot 'fail'.
+CM cuts slide from tumor block (FFPE)
+  	          Cuts = 1 HE, 4 unstained (from IHC), 30-50 unstained slides, 1 H&E
+              Slides for IHC do not need to be vacuum sealed or wax dipped
+BPC picks up tumor block, stained slides and slides 4 unstained slides (for IHC)
+All specimens will be shipped back to BPC in STARS.  BPC will need to make a new request that have the unstained slides.
+BPC takes slides to Pathologist for review and slide annotation
+PATH marks slide for macro
+PATH enters path results and concordance (need to get to STARS)
+c.	  If low percent tumor, sent email out to group > do not move on
+d.  	If not concordant, send email out to group > do not move on
+
+
 
 
 
