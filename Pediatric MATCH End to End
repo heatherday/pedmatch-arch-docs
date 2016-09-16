@@ -63,14 +63,9 @@ MDA sends results to MATCHBOX for IHC
 MGL extracts DNA and RNA from paraffin scrapings
 
 Day 3
-MGL will create cDNA and run QC on all nucleic acid specimens (how do we check QC complete?) NEED TO CREATE Molecular ID here...
-  determine the specimen characreistics we can pull from STARS to create molecular IDs in PEDSMATCHIQ, 
-a.	Run gel, run pico (required results?)
-b.	Make DNA dilutions and aliquots
-c.	Run agilent
-d.	Run nanodrop (upload? remind me what is this data again) 
-21)	MGL director performs review of nucleic acid specimens (routine sign out)
-22)	Create shipment in STARS > assign specimens -
+MGL will create cDNA and run QC on all nucleic acid
+MGL director performs review of nucleic acid specimens
+MGL Create shipment in STARS > assign specimens -
           is search in distribution adequate to locate specimens to ship
           do you want to check lineage/audit in report to ensure came from peds match parent specimen?
 a.	Molecular ID is assigned to each specimen added to the shipment, added to record in pedsmatchIQ
@@ -126,7 +121,7 @@ MGL Receives Blood in EDTA
 CM receives Tunmor Block
 CM will make final judgment (?) and will contact BPC if the request needs to be updated.
 
-Patholoy Review Failure 
+Patholoy Review Specimen Failure 
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
 COG  messgae to MATCHBOX COG registration number: patient enrolled
 COG issues email notification of enrollment to BPC
