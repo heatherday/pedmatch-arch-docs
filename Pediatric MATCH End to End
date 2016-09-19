@@ -1,162 +1,187 @@
-Everything goes perfect...
+'Everything goes perfect
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
-COG  messgae to MATCHBOX COG registration number: patient enrolled
-COG issues email notification of enrollment to BPC
-COG issues messaging Peds MATCH
-  Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
-  Specimens are shipped from institution(s) to BPC (all adequate)
-(check if email notification to sequencing labs/MDA)
-BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
-BPC accessioned specimens in STARS
-         (enh. add notes to STARS for Peds MATCH Protocol for workflow (processing, path review etc, what to send)?
-         (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
-          path report should be recieved at this time (scanned?)
-BPC will look at tissue and create CM Request (see reqeust specificiation) is this first possible failure indication?
-BPC send specimens to CM and MGL for processing.
-AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID???
-BPC Sends Blood to MGL
-BPC Sends Tumor Block to CM
-MGL Receives Blood in EDTA
-CM receives Tunmor Block
-CM will make final judgment (?) and will contact BPC if the request needs to be updated.
-BPC process blood in streck for plasma > bank
-MGL extracts DNA from blood specimens.
-MGL QC specimens (run get/run pico), create aliquots > bank (completed in STARS?) NOTE: Blood Specimens cannot 'fail'.
-CM cuts slide from tumor block (FFPE)
-  	          Cuts = 1 HE, 4 unstained (from IHC), 30-50 unstained slides, 1 H&E
-              Slides for IHC do not need to be vacuum sealed or wax dipped
-BPC picks up tumor block, stained slides and slides 4 unstained slides (for IHC)
-All specimens will be shipped back to BPC in STARS.  BPC will need to make a new request that have the unstained slides.
-BPC takes slides to Pathologist for review and slide annotation
+COG messages MATCHBOX with COG registration number: status indication: patient enrolled
+COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
+BPC receives specimens in CR expcted: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS, 
+BPC/CM/MGL specimen(s) processing begins
 PATH marks slide for macro
-PATH enters path results and concordance (need to get to STARS)
-c.	  If low percent tumor, sent email out to group > do not move on
-d.  	If not concordant, send email out to group > do not move on
-BPC takes HE annotated slides back to CM for macro dissection
-BPC will send a CM request in STARS that has the stained slides and unstained slides.
-BPC enters path review forms into STARS (or initiates pull from VIPER)
-CM scrapes the tumor section of the slides into a vial  
-a.	Completed CM request in STARS
-BPC picks up stained slides and vial of scrapings.
-BPC will receive CM request and create a MGL request in STARS
-BPC sends vial of scrapings to MGL.
+PATH enters path results and concordance (local) - glass review/paper
+CM scrapes the tumor section of the slides into a vial
+BPC picks up stained slides and vial of scrapings from CM
 BPC sends annotated stained slides to VM for imaging, create case in VIPER
-
 Day 2
-BPC coordinator receives paperwork from the previous day and QC specimens in STARS
-          	Received message triggered to MATCHBOX, PatientID, Surgical ID, Specimen Type..... you are here 
-b.	Surgical event ID assigned to tumor specimen, check QC flag in STARS to trigger:
-        Message, patient ID, surgical ID, specimens of <type list>, APEC1621, timepoint, collection...
-          create record in PedsMatchIQ 
-          send message to matchbox
-          (audit/report in BIE to show history of pedsmatch communication standards)
+BPC paperwork QC
+BPC sends Specimen Received message to MATCHBOX
 VM scans slides
-a.	Slides will first be scanned with the annotation, and then the annotations will be removed and rescanned
-VM creates a case in VIPER so MDA path can look at them
+VM creates a case in VIPER
+VM (VIPER) sends email notfication to MDA pathologist
+MDA PATH receives case review email notification 
 MDA Pathology receives VIPER case review invitation
-BPC sends slides for IHC to MD Anderson
-a.shipped message is triggered to MATCHBOX
+BPC prepares and ships slides for IHC to MD Anderson
+BPC sends shipped message to MATCHBOX for slides
 MDA receives slides for IHC
 MDA accessions slides for IHC and runs tests
-MDA Pathology receives VIPER case creation
-MDA sends results to MATCHBOX for IHC
+MDA sends results to MATCHBOX for IHC testing
 MGL extracts DNA and RNA from paraffin scrapings
-
 Day 3
 MGL will create cDNA and run QC on all nucleic acid
 MGL director performs review of nucleic acid specimens
-MGL Create shipment in STARS > assign specimens -
-          is search in distribution adequate to locate specimens to ship
-          do you want to check lineage/audit in report to ensure came from peds match parent specimen?
-a.	Molecular ID is assigned to each specimen added to the shipment, added to record in pedsmatchIQ
-                  this data needs to be made immediately available to label maker, way to confirm audit? validate before shipping
-                  generate a barcode and scan or validation feature
-                  2D barcode generated in label maker
-23)	Relabel specimen vials with sequencing center requirements.
-a.	Molecular ID in 2D barcode...using label maker
-24)	MGL physically ships and marks shipment in STARS as shipped.
-          checklist: clinical treating physician report, shipping manifest, pathology report, pathology  concordnance set to Y
-          If we do not assign the molecular ID until shipping, a specimen cannot be failed (need to assign these further upstream)!!! tdb
-a.	Shipped message triggered to match box.
-25)	MGL runs identity panel on tumor and blood specimens. - process to notify sequencing?? is this how we want this to work.
-a.	Due to timing this will probably occur after specimens have been shipped.  ok - we have to be able to fail a specimen after shipment,
-      is this input as a TEST, may need alternate trigger for the edge case.
-26)	BPC banks slides
+MGL prep and ship tumor aliquots
+MGL shipment triggers DNA shipped message to MATCHBOX.
+MGL runs identity panel on tumor and blood specimens
+BPC banks slides
+MDA/MOCHA complete DNA Sequencing 
+MDA/MOCHA send Assay results to MATCHBOX
+MATCHBOX assigns Patient to a TX ARM
 
-Visual QC Specimen  Failure
+'Specimen Fails visual QC (no tumor), site does not have anymore tissue
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
-COG  messgae to MATCHBOX COG registration number: patient enrolled
-COG issues email notification of enrollment to BPC
-COG issues messaging Peds MATCH
-  Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
-  Specimens are shipped from institution(s) to BPC (all adequate)
-(check if email notification to sequencing labs/MDA)
-BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
-BPC accessioned specimens in STARS
-         (enh. add notes to STARS for Peds MATCH Protocol for workflow (processing, path review etc, what to send)?
-         (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
-          path report should be recieved at this time (scanned?)
-BPC will look at tissue and create CM Request (see reqeust specificiation) is this first possible failure indication?
+COG messages MATCHBOX with COG registration number: status indication: patient enrolled
+COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
+BPC receives specimens in CR expected: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS, 
+BPC/CM/MGL specimen(s) processing begins
+CM Visual QC reveals no tumor, calls BPC to contact site
+BPC contacts site
+SITE informs BPC no more tissue available
+BPC contacts COG
+COG keeps patient enrolled on APEC1621 for 2 years
 
-CM Review Specimen Failure (Tumor)
-Everything goes perfect...
-COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
-COG  messgae to MATCHBOX COG registration number: patient enrolled
-COG issues email notification of enrollment to BPC
-COG issues messaging Peds MATCH
-  Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
-  Specimens are shipped from institution(s) to BPC (all adequate)
-(check if email notification to sequencing labs/MDA)
-BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
-BPC accessioned specimens in STARS
-         (enh. add notes to STARS for Peds MATCH Protocol for workflow (processing, path review etc, what to send)?
-         (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
-          path report should be recieved at this time (scanned?)
-BPC will look at tissue and create CM Request (see reqeust specificiation) is this first possible failure indication?
-BPC send specimens to CM and MGL for processing.
-AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID???
-BPC Sends Blood to MGL
-BPC Sends Tumor Block to CM
-MGL Receives Blood in EDTA
-CM receives Tunmor Block
-CM will make final judgment (?) and will contact BPC if the request needs to be updated.
 
-Patholoy Review Specimen Failure 
+'Specimen Fails visual QC (no tumor), site has tissue (not from same surgery)
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
-COG  messgae to MATCHBOX COG registration number: patient enrolled
-COG issues email notification of enrollment to BPC
-COG issues messaging Peds MATCH
-  Institution submits Peds MATCH Specimen Transmittal Notes to self: (need to review) could implement screening question Y/N
-  Specimens are shipped from institution(s) to BPC (all adequate)
-(check if email notification to sequencing labs/MDA)
-BPC receives blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
-BPC accessioned specimens in STARS
-         (enh. add notes to STARS for Peds MATCH Protocol for workflow (processing, path review etc, what to send)?
-         (patient names and DOB are required to be printed on manifest later) (audit when are held up by the absence of either of these?)
-          path report should be recieved at this time (scanned?)
-BPC will look at tissue and create CM Request (see reqeust specificiation) is this first possible failure indication?
-BPC send specimens to CM and MGL for processing.
-AT THIS POINT IN NEXT SCENARIO COULD FAIL, NEED EARLIER ASSIGNMENT OF SURGICAL ID???
-BPC Sends Blood to MGL
-BPC Sends Tumor Block to CM
-MGL Receives Blood in EDTA
-CM receives Tunmor Block
-CM will make final judgment (?) and will contact BPC if the request needs to be updated.
-BPC process blood in streck for plasma > bank
-MGL extracts DNA from blood specimens
-MGL QC specimens (run get/run pico), create aliquots > bank (completed in STARS?) NOTE: Blood Specimens cannot 'fail'.
-CM cuts slide from tumor block (FFPE)
-  	          Cuts = 1 HE, 4 unstained (from IHC), 30-50 unstained slides, 1 H&E
-              Slides for IHC do not need to be vacuum sealed or wax dipped
-BPC picks up tumor block, stained slides and slides 4 unstained slides (for IHC)
-All specimens will be shipped back to BPC in STARS.  BPC will need to make a new request that have the unstained slides.
-BPC takes slides to Pathologist for review and slide annotation
+COG messages MATCHBOX with COG registration number: status indication: patient enrolled
+COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
+BPC receives specimens in CR expected: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS, 
+BPC/CM/MGL specimen(s) processing begins
+CM Visual QC reveals no tumor, calls BPC to contact site
+BPC contacts site, more tissue from a different surgery is available
+SITE ships tissue to BPC
+BPC receives more FFPE
+BPC accessioned specimens in STARS, 
+
+'Specimen Fails Pathology Review, site has more from same surgery
+COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
+COG messages MATCHBOX with COG registration number: status indication: patient enrolled
+COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
+BPC receives specimens in CR expcted: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS, 
+BPC/CM/MGL specimen(s) processing begins
 PATH marks slide for macro
-PATH enters path results and concordance (need to get to STARS)
-c.	  If low percent tumor, sent email out to group > do not move on
-d.  	If not concordant, send email out to group > do not move on
+PATH enters path results and concordance (local) - glass review/paper
+PATH indicates specimen failure (i.e. no tumor) and contacts BPC
+BPC contacts various departments to stop processing specimens for Peds MATCH
+BPC contacts site
+SITE sends more tissue from same block is shipped
+BPC receives more FFPE
 
+'Specimen Fails QC in MGL
+COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
+COG messages MATCHBOX with COG registration number: status indication: patient enrolled
+COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
+BPC receives specimens in CR expcted: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS, 
+BPC/CM/MGL specimen(s) processing begins
+PATH marks slide for macro
+PATH enters path results and concordance (local) - glass review/paper
+CM scrapes the tumor section of the slides into a vial
+BPC picks up stained slides and vial of scrapings from CM
+BPC sends annotated stained slides to VM for imaging, create case in VIPER
+Day 2
+BPC paperwork QC
+BPC sends Specimen Received message to MATCHBOX
+VM scans slides
+VM creates a case in VIPER
+VM (VIPER) sends email notfication to MDA pathologist
+MDA PATH receives case review email notification 
+MDA Pathology receives VIPER case review invitation
+BPC prepares and ships slides for IHC to MD Anderson
+BPC sends shipped message to MATCHBOX for slides
+MDA receives slides for IHC
+MDA accessions slides for IHC and runs tests
+MDA sends results to MATCHBOX for IHC testing
+MGL extracts DNA and RNA from paraffin scrapings
+Day 3
+MGL will create cDNA and run QC on all nucleic acid
+MGL extractions fail QC
+MGL contacts BPC for more tumor
+BPC contacts site for more tumor
+SITE sends more tissue from same block is shipped
+BPC receives more FFPE
 
+'MGL identity panel fails
+COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
+COG messages MATCHBOX with COG registration number: status indication: patient enrolled
+COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
+BPC receives specimens in CR expcted: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS, 
+BPC/CM/MGL specimen(s) processing begins
+PATH marks slide for macro
+PATH enters path results and concordance (local) - glass review/paper
+CM scrapes the tumor section of the slides into a vial
+BPC picks up stained slides and vial of scrapings from CM
+BPC sends annotated stained slides to VM for imaging, create case in VIPER
+Day 2
+BPC paperwork QC
+BPC sends Specimen Received message to MATCHBOX
+VM scans slides
+VM creates a case in VIPER
+VM (VIPER) sends email notfication to MDA pathologist
+MDA PATH receives case review email notification 
+MDA Pathology receives VIPER case review invitation
+BPC prepares and ships slides for IHC to MD Anderson
+BPC sends shipped message to MATCHBOX for slides
+MDA receives slides for IHC
+MDA accessions slides for IHC and runs tests
+MDA sends results to MATCHBOX for IHC testing
+MGL extracts DNA and RNA from paraffin scrapings
+Day 3
+MGL will create cDNA and run QC on all nucleic acid
+MGL director performs review of nucleic acid specimens
+MGL prep and ship tumor aliquots
+MGL shipment triggers DNA shipped message to MATCHBOX.
+MGL runs identity panel on tumor and blood specimens
+MGL identity panel fails, MGL contacts MDA, Sequencing labs, MATCHBOX
 
+'Sequencing lab fails DNA
+COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
+COG messages MATCHBOX with COG registration number: status indication: patient enrolled
+COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
+BPC receives specimens in CR expcted: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
+BPC accessioned specimens in STARS, 
+BPC/CM/MGL specimen(s) processing begins
+PATH marks slide for macro
+PATH enters path results and concordance (local) - glass review/paper
+CM scrapes the tumor section of the slides into a vial
+BPC picks up stained slides and vial of scrapings from CM
+BPC sends annotated stained slides to VM for imaging, create case in VIPER
+Day 2
+BPC paperwork QC
+BPC sends Specimen Received message to MATCHBOX
+VM scans slides
+VM creates a case in VIPER
+VM (VIPER) sends email notfication to MDA pathologist
+MDA PATH receives case review email notification 
+MDA Pathology receives VIPER case review invitation
+BPC prepares and ships slides for IHC to MD Anderson
+BPC sends shipped message to MATCHBOX for slides
+MDA receives slides for IHC
+MDA accessions slides for IHC and runs tests
+MDA sends results to MATCHBOX for IHC testing
+MGL extracts DNA and RNA from paraffin scrapings
+Day 3
+MGL will create cDNA and run QC on all nucleic acid
+MGL director performs review of nucleic acid specimens
+MGL prep and ship tumor aliquots
+MGL shipment triggers DNA shipped message to MATCHBOX.
+MGL runs identity panel on tumor and blood specimens
+BPC banks slides
+MDA/MOCHA recieves nucleic acid for DNA Sequencing 
+MDA/MOCHA fails DNA
+MDA/MOCHA calls MGL to report failure
+MGL has more aliquots from same surgery
+MGL prepares and ships additional aliquots of DNA/cDNA 
 
 
