@@ -45,11 +45,13 @@ BPC/CM/MGL specimen(s) processing begins
 CM Visual QC reveals no tumor, calls BPC to contact site
 BPC contacts site
 SITE informs BPC no more tissue available
-BPC contacts COG
+BPC calls MGL to have a director review the case and input specimen failure details
+BPC contacts COG via phone
+BPC sends specimen failure message with reason
 COG keeps patient enrolled on APEC1621 for 2 years
 
 
-'Specimen Fails visual QC (no tumor), site has tissue (not from same surgery)
+'Specimen Fails visual QC (no tumor), site has more tissue (not from same surgery)
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
 COG messages MATCHBOX with COG registration number: status indication: patient enrolled
 COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
@@ -60,7 +62,7 @@ CM Visual QC reveals no tumor, calls BPC to contact site
 BPC contacts site, more tissue from a different surgery is available
 SITE ships tissue to BPC
 BPC receives more FFPE
-BPC accessioned specimens in STARS, 
+BPC accessioned specimens in STARS
 
 'Specimen Fails Pathology Review, site has more from same surgery
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
