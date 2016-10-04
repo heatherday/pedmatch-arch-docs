@@ -41,8 +41,8 @@ COG messages MATCHBOX with COG registration number: status indication: patient e
 COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
 BPC receives specimens in CR expected: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
 BPC accessioned specimens in STARS, 
-BPC/CM/MGL specimen(s) processing begins
-CM Visual QC reveals no tumor, calls BPC to contact site
+BPC/CM/MGL specimen(s) processing starts
+PATH Review reveals no tumor
 BPC contacts site
 SITE informs BPC no more tissue available
 BPC calls MGL to have a director review the case and input specimen failure details
@@ -58,11 +58,14 @@ COG issues email notification of enrollment to BPC: status indication: patient e
 BPC receives specimens in CR expected: blood (2 vials (EDTA and STRECK) and tumor block (FFPE)
 BPC accessioned specimens in STARS, 
 BPC/CM/MGL specimen(s) processing begins
-CM Visual QC reveals no tumor, calls BPC to contact site
+PATH review fails, no tumor
 BPC contacts site, more tissue from a different surgery is available
 SITE ships tissue to BPC
-BPC receives more FFPE
+BPC receives more FFPE, new surgical ID is assigned
 BPC accessioned specimens in STARS
+- failed message to MATCHBOX for failed surgical ID
+-new received message to MATCHBOX
+
 
 'Specimen Fails Pathology Review, site has more from same surgery
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
@@ -76,10 +79,14 @@ PATH enters path results and concordance (local) - glass review/paper
 PATH indicates specimen failure (i.e. no tumor) and contacts BPC
 BPC contacts various departments to stop processing specimens for Peds MATCH
 BPC contacts site
+MGL Director fails specimens in STARS?
 SITE sends more tissue from same block is shipped
 BPC receives more FFPE
+CM Processing begins
+PATH Review passes
 
-'Specimen Fails QC in MGL
+
+'Specimen Fails QC in MGL, more available at site from same block/surgeory 
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
 COG messages MATCHBOX with COG registration number: status indication: patient enrolled
 COG issues email notification of enrollment to BPC: status indication: patient enrolled, specimen collected
@@ -111,7 +118,7 @@ MGL extractions fail QC
 MGL contacts BPC for more tumor
 BPC contacts site for more tumor
 SITE sends more tissue from same block is shipped
-BPC receives more FFPE
+BPC receives more FFPE, process starts again
 
 'MGL identity panel fails
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
@@ -146,6 +153,7 @@ MGL prep and ship tumor aliquots
 MGL shipment triggers DNA shipped message to MATCHBOX.
 MGL runs identity panel on tumor and blood specimens
 MGL identity panel fails, MGL contacts MDA, Sequencing labs, MATCHBOX
+-failed message to MATCHBOX for specimens surgical 
 
 'Sequencing lab fails DNA
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
@@ -177,13 +185,14 @@ Day 3
 MGL will create cDNA and run QC on all nucleic acid
 MGL director performs review of nucleic acid specimens
 MGL prep and ship tumor aliquots
-MGL shipment triggers DNA shipped message to MATCHBOX.
+- shipment triggers DNA shipped message to MATCHBOX.
 MGL runs identity panel on tumor and blood specimens
 BPC banks slides
 MDA/MOCHA recieves nucleic acid for DNA Sequencing 
 MDA/MOCHA fails DNA
 MDA/MOCHA calls MGL to report failure
 MGL has more aliquots from same surgery
-MGL prepares and ships additional aliquots of DNA/cDNA 
+MGL prepares and ships additional aliquots of DNA/cDNA (new molecular ID assigned)
+ - shipment triggers shipped message to MATCHBOX?
 
 
