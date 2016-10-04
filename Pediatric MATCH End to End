@@ -64,7 +64,7 @@ SITE ships tissue to BPC
 BPC receives more FFPE, new surgical ID is assigned
 BPC accessioned specimens in STARS
 - failed message to MATCHBOX for failed surgical ID
--new received message to MATCHBOX
+-new received message to MATCHBOX 
 
 
 'Specimen Fails Pathology Review, site has more from same surgery
@@ -79,11 +79,12 @@ PATH enters path results and concordance (local) - glass review/paper
 PATH indicates specimen failure (i.e. no tumor) and contacts BPC
 BPC contacts various departments to stop processing specimens for Peds MATCH
 BPC contacts site
-MGL Director fails specimens in STARS?
+MGL Director fails specimens in STARS
 SITE sends more tissue from same block is shipped
 BPC receives more FFPE
 CM Processing begins
 PATH Review passes
+continue
 
 
 'Specimen Fails QC in MGL, more available at site from same block/surgeory 
@@ -153,7 +154,7 @@ MGL prep and ship tumor aliquots
 MGL shipment triggers DNA shipped message to MATCHBOX.
 MGL runs identity panel on tumor and blood specimens
 MGL identity panel fails, MGL contacts MDA, Sequencing labs, MATCHBOX
--failed message to MATCHBOX for specimens surgical 
+-failed message to MATCHBOX for specimens surgical ID
 
 'Sequencing lab fails DNA
 COG Institution Patient Registration and Enrollment on APEC1621 (master protocol) (system OPEN)
@@ -192,7 +193,9 @@ MDA/MOCHA recieves nucleic acid for DNA Sequencing
 MDA/MOCHA fails DNA
 MDA/MOCHA calls MGL to report failure
 MGL has more aliquots from same surgery
+- cannot send a failed message to MATCHBOX
+- record director review/failure in STARS for previously shipped DNA
 MGL prepares and ships additional aliquots of DNA/cDNA (new molecular ID assigned)
- - shipment triggers shipped message to MATCHBOX?
+ - shipment triggers shipped message to MATCHBOX with new molecular IDs and (previous message is overwritten in MATCHBOX)
 
 
